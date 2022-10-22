@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ka8-36-AHc">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Contact List-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ContactList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Qxj-ZC-O5w">
+                                <rect key="frame" x="0.0" y="88" width="414" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="PBu-XX-VbG">
+                                <rect key="frame" x="0.0" y="139" width="414" height="723"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="contactCell" id="eVH-ig-ADx" customClass="ContactTableViewCell" customModule="ContactList" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eVH-ig-ADx" id="ChI-Mp-iav">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9FR-kb-XLQ">
+                                                    <rect key="frame" x="186" y="11.5" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="9FR-kb-XLQ" firstAttribute="centerX" secondItem="ChI-Mp-iav" secondAttribute="centerX" id="n4D-9r-uED"/>
+                                                <constraint firstItem="9FR-kb-XLQ" firstAttribute="centerY" secondItem="ChI-Mp-iav" secondAttribute="centerY" id="vgl-sc-0yR"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="contactLabel" destination="9FR-kb-XLQ" id="M2M-gi-8NX"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="PBu-XX-VbG" secondAttribute="bottom" id="6mJ-Jc-g1n"/>
+                            <constraint firstItem="PBu-XX-VbG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FtY-f9-Qvm"/>
+                            <constraint firstItem="Qxj-ZC-O5w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Lfh-wT-N2z"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PBu-XX-VbG" secondAttribute="trailing" id="X2y-ja-1PJ"/>
+                            <constraint firstItem="Qxj-ZC-O5w" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Zne-Xo-qmE"/>
+                            <constraint firstItem="PBu-XX-VbG" firstAttribute="top" secondItem="Qxj-ZC-O5w" secondAttribute="bottom" id="iJs-uj-hdf"/>
+                            <constraint firstItem="Qxj-ZC-O5w" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="pnU-8y-2bJ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Contact List" id="XIU-Nt-DHw">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="JVW-ig-gg6">
+                            <connections>
+                                <segue destination="WW1-o9-Ecf" kind="show" id="QEN-c1-t4M"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="contactTableView" destination="PBu-XX-VbG" id="n3o-I8-L9Y"/>
+                        <outlet property="searchBar" destination="Qxj-ZC-O5w" id="qAO-yx-z2K"/>
+                        <segue destination="XD4-dx-86t" kind="show" identifier="toUpdate" id="KND-gT-Bhc"/>
+                        <segue destination="D3J-ns-MNo" kind="show" identifier="toDetail" id="9Bk-6b-9VF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1031.8840579710145" y="104.46428571428571"/>
+        </scene>
+        <!--Contact Update-->
+        <scene sceneID="Jng-NM-dt0">
+            <objects>
+                <viewController id="XD4-dx-86t" customClass="UpdateContactViewController" customModule="ContactList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Dar-kP-iqt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Kişi Adı" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FmZ-bm-jaV">
+                                <rect key="frame" x="80" y="272" width="254" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Kişi Tel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9E5-1o-8MN">
+                                <rect key="frame" x="80" y="369" width="254" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kAS-H9-RYb">
+                                <rect key="frame" x="154" y="513" width="106" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Update"/>
+                                <connections>
+                                    <action selector="contactUpdate:" destination="XD4-dx-86t" eventType="touchUpInside" id="GCZ-It-3Ge"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="M5o-qp-yM9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9E5-1o-8MN" firstAttribute="leading" secondItem="M5o-qp-yM9" secondAttribute="leading" constant="80" id="5so-fx-lyN"/>
+                            <constraint firstItem="FmZ-bm-jaV" firstAttribute="leading" secondItem="M5o-qp-yM9" secondAttribute="leading" constant="80" id="8kJ-R0-kji"/>
+                            <constraint firstItem="kAS-H9-RYb" firstAttribute="top" secondItem="9E5-1o-8MN" secondAttribute="bottom" constant="110" id="9yG-lS-x9a"/>
+                            <constraint firstItem="M5o-qp-yM9" firstAttribute="trailing" secondItem="kAS-H9-RYb" secondAttribute="trailing" constant="154" id="DCe-Ew-8JU"/>
+                            <constraint firstItem="FmZ-bm-jaV" firstAttribute="top" secondItem="M5o-qp-yM9" secondAttribute="top" constant="184" id="Tpj-Ib-y6D"/>
+                            <constraint firstItem="9E5-1o-8MN" firstAttribute="top" secondItem="FmZ-bm-jaV" secondAttribute="bottom" constant="63" id="cvm-7N-yRc"/>
+                            <constraint firstItem="M5o-qp-yM9" firstAttribute="trailing" secondItem="FmZ-bm-jaV" secondAttribute="trailing" constant="80" id="li9-li-TfB"/>
+                            <constraint firstItem="M5o-qp-yM9" firstAttribute="trailing" secondItem="9E5-1o-8MN" secondAttribute="trailing" constant="80" id="pyf-ih-si0"/>
+                            <constraint firstItem="kAS-H9-RYb" firstAttribute="leading" secondItem="M5o-qp-yM9" secondAttribute="leading" constant="154" id="uce-z0-jL5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Contact Update" id="wjK-Lj-wj1"/>
+                    <connections>
+                        <outlet property="contactNameTextField" destination="FmZ-bm-jaV" id="I5S-QJ-8Jo"/>
+                        <outlet property="contactPhoneTextField" destination="9E5-1o-8MN" id="2Lv-d1-vlt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MUN-3Q-hxD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1900.0000000000002" y="318.75"/>
+        </scene>
+        <!--Contact Detail-->
+        <scene sceneID="liK-oi-7tE">
+            <objects>
+                <viewController id="D3J-ns-MNo" customClass="DetailContactViewController" customModule="ContactList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JMy-7Y-wU9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xL0-HB-nKS">
+                                <rect key="frame" x="171.5" y="350" width="71" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWA-Ck-mub">
+                                <rect key="frame" x="171.5" y="246" width="71" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0Mn-C8-nQt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jWA-Ck-mub" firstAttribute="centerX" secondItem="JMy-7Y-wU9" secondAttribute="centerX" id="F8z-Ct-oeJ"/>
+                            <constraint firstItem="jWA-Ck-mub" firstAttribute="top" secondItem="0Mn-C8-nQt" secondAttribute="top" constant="158" id="LTF-BW-0bl"/>
+                            <constraint firstItem="xL0-HB-nKS" firstAttribute="top" secondItem="jWA-Ck-mub" secondAttribute="bottom" constant="68" id="Og2-dN-Wlz"/>
+                            <constraint firstItem="xL0-HB-nKS" firstAttribute="centerX" secondItem="JMy-7Y-wU9" secondAttribute="centerX" id="rEK-B1-ygy"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Contact Detail" id="g4B-g4-4bU"/>
+                    <connections>
+                        <outlet property="contactNameLabel" destination="jWA-Ck-mub" id="hxX-dV-PHc"/>
+                        <outlet property="contactPhoneLabel" destination="xL0-HB-nKS" id="jIO-ss-lDQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qwk-22-cpI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1032" y="927"/>
+        </scene>
+        <!--Contact Add-->
+        <scene sceneID="Ih4-Mn-dl6">
+            <objects>
+                <viewController id="WW1-o9-Ecf" customClass="NewContactViewController" customModule="ContactList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5ix-aG-rcD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Kişi Adı" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZYj-we-mVl">
+                                <rect key="frame" x="80" y="272" width="254" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Kişi Tel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0KL-oO-U8S">
+                                <rect key="frame" x="80" y="369" width="254" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sMW-oq-GoT">
+                                <rect key="frame" x="170" y="515" width="74" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Ekle"/>
+                                <connections>
+                                    <action selector="addContact:" destination="WW1-o9-Ecf" eventType="touchUpInside" id="Vs2-B2-ww3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="jH8-PN-P52"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sMW-oq-GoT" firstAttribute="top" secondItem="0KL-oO-U8S" secondAttribute="bottom" constant="112" id="ELZ-hF-h2Z"/>
+                            <constraint firstItem="0KL-oO-U8S" firstAttribute="leading" secondItem="jH8-PN-P52" secondAttribute="leading" constant="80" id="YNB-bK-rer"/>
+                            <constraint firstItem="jH8-PN-P52" firstAttribute="trailing" secondItem="ZYj-we-mVl" secondAttribute="trailing" constant="80" id="djF-BM-IYb"/>
+                            <constraint firstItem="ZYj-we-mVl" firstAttribute="leading" secondItem="jH8-PN-P52" secondAttribute="leading" constant="80" id="gsh-BG-tLm"/>
+                            <constraint firstItem="jH8-PN-P52" firstAttribute="trailing" secondItem="sMW-oq-GoT" secondAttribute="trailing" constant="170" id="hUH-Wg-4JL"/>
+                            <constraint firstItem="jH8-PN-P52" firstAttribute="trailing" secondItem="0KL-oO-U8S" secondAttribute="trailing" constant="80" id="hyS-1F-kPM"/>
+                            <constraint firstItem="0KL-oO-U8S" firstAttribute="top" secondItem="ZYj-we-mVl" secondAttribute="bottom" constant="63" id="mp5-di-x8g"/>
+                            <constraint firstItem="ZYj-we-mVl" firstAttribute="top" secondItem="jH8-PN-P52" secondAttribute="top" constant="184" id="qCV-5L-Yfz"/>
+                            <constraint firstItem="sMW-oq-GoT" firstAttribute="leading" secondItem="jH8-PN-P52" secondAttribute="leading" constant="170" id="ufO-rn-k64"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Contact Add" id="Nxw-ev-TGg"/>
+                    <connections>
+                        <outlet property="contactNameTextField" destination="ZYj-we-mVl" id="imu-4U-88h"/>
+                        <outlet property="contactPhoneTextField" destination="0KL-oO-U8S" id="z2y-CC-XtN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dyU-ja-RI6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1900" y="-352"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Hi2-yO-FP9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ka8-36-AHc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="L81-Na-Zz1">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="XYz-GF-WSP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xEV-su-KEe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="121.73913043478262" y="104.46428571428571"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
